@@ -2780,3 +2780,39 @@ figure.alignnone {
 	padding: 8px 0;
 	color: inherit;
 }
+
+
+/*block for team member 2022 */
+
+.teammember {
+	width:100%;
+	display:block;
+	border-bottom:2px solid #ddd;
+	margin-bottom:1em;
+}
+.teammember h2 {
+	color:#111111 !important;
+	font-weight:700 !important;
+
+}
+
+
+.teammember h3 {
+	color:#111111 !important;
+	font-weight:500 !important;
+
+}
+
+
+.teammember h4 {
+	color:#111111 !important;
+	font-weight:500 !important;
+	font-size:0.9em !important;
+
+}
+
+.teammember .btn { margin-bottom:10px;
+}
+
+.teammember img { margin-bottom:10px !important;
+}
