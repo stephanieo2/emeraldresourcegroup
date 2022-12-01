@@ -2816,3 +2816,13 @@ figure.alignnone {
 
 .teammember img { margin-bottom:10px !important;
 }
+
+
+/*blog page styles 2022 */
+
+.body-class-page-id-685 li {padding:1em 0; margin-top:0px !important; list-style-type:none;}
+.tag-archive-list {margin:2em 0; border-bottom:2px solid #eee;}
+
+.taglist li {display: inline-block; padding:0.5em; margin:0.5em 0.5em 0.5em 0; background:#eee;}
+
+.taglist a:hover {color:white;}

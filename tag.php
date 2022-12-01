@@ -3,8 +3,8 @@
 <!-- banner -->
 <div class="visual alt">
   <div class="bg-stretch">
-    <?php if (has_post_thumbnail( get_option( 'page_for_posts' ) )) : ?>
-      <?php echo preg_replace('#(width|height)=\"\d*\"\s#', "", wp_get_attachment_image(get_post_thumbnail_id(get_option( 'page_for_posts' )), 'thumbnail_1440x525')); ?>
+    <?php if (has_post_thumbnail( get_the_ID() )) : ?>
+      <?php echo preg_replace('#(width|height)=\"\d*\"\s#', "", wp_get_attachment_image(get_post_thumbnail_id(get_the_ID()), 'thumbnail_1440x525')); ?>
     <?php else: ?>
       <img src="<?php echo get_template_directory_uri(); ?>/images/bg_page.jpg" alt="image description" >
     <?php endif; ?>
@@ -19,13 +19,12 @@
             ?>
               
               <div class="search-holder">
-	              <?php
-	                $searchPage = get_page_by_title('Career Search');
-                  print_job_search_form();
-	              ?>
-	             
+        <?php
+          $searchPage = get_page_by_title('Career Search');
+        
+                print_job_search_form();
 
-            <?php
+            
               }
               else {
             ?>
@@ -45,54 +44,30 @@
 <div class="two-columns">
   <div class="container">
     <div class="row">
-      <?php get_sidebar('blog'); ?>
+      <?php get_sidebar(); ?>
       <div class="col-xs-12 col-md-8">
         <div id="content">
+
+          <h1><?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?></h1>
           <?php while (have_posts()) : the_post(); ?>
-            <?php the_title('<div class="title"><h1>', '</h1></div>'); ?>
+           
+            <article class="tag-archive-list">
+            <h2 class="entry-title"><a href="<?=get_permalink()?>"><?php the_title(); ?></a></h2>
+    
 
-Published: <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 
-<br>
-
-            <?php
-function show_last_updated( $content ) {
-  $u_time = get_the_time('U');
-  $u_modified_time = get_the_modified_time('U');
-  if ($u_modified_time >= $u_time + 86400) {
-    $updated_date = get_the_modified_time('F jS, Y');
-    $updated_time = get_the_modified_time('h:i a');
-    $custom_content .= '<time itemprop="dateModified" datetime="'. $updated_date . '" class="last-updated-date">Updated on '. $updated_date . ' at '. $updated_time .'</time>';
-  }
-  $custom_content .= $content;
-  return $custom_content;
-}
-add_filter( 'the_content', 'show_last_updated' );?>
-            
-            <?php the_content(); ?>
- 
-<h2>Tags:</h2>
- <?php
-$post_tags = get_the_tags();
-if ( ! empty( $post_tags ) ) {
-  echo '<ul class="taglist">';
-  foreach( $post_tags as $post_tag ) {
-    echo '<li class="btn btn-info"><a href="' . get_tag_link( $post_tag ) . '">' . $post_tag->name . '</a></li>';
-  }
-  echo '</ul>';
-}
-   ?>         
+            <?php the_excerpt(); ?>
+          </article>
             
             <?php edit_post_link( __( 'Edit', 'emeraldresourcegroup' ) ); ?>  
           <?php endwhile; ?>
 
-          <?php wp_link_pages(); ?>   
-
+          <?php wp_link_pages(); ?>
         </div>
-      <div class="widget gform_widget visible-xs visible-sm" style="border-top: 1px solid #E8E8E8;padding-top: 50px;margin-top: 50px;">
-	      <h3>Let us help you find a career you’ll love.</h3>
-	      <?php gravity_form('Sidebar Form', false, true, true, '200', false); ?>
-      </div>
+        <div class="widget gform_widget visible-xs visible-sm" style="border-top: 1px solid #E8E8E8;padding-top: 50px;margin-top: 50px;">
+            <h3>Let us help you find a career you’ll love.</h3>
+            <?php  gravity_form('Sidebar Form', false, true, true, '200', false);?>
+        </div>
       </div>
     </div>
   </div>
