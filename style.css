@@ -2786,7 +2786,7 @@ figure.alignnone {
 
 .teammember {
 	width:100%;
-	display:block;
+	display:inline-block;
 	border-bottom:2px solid #ddd;
 	margin-bottom:1em;
 }

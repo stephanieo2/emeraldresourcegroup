@@ -41,8 +41,8 @@ $bio       = get_field('bio');
 
 
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
- 
-<article itemscope itemtype ="https://schema.org/Person" class="teammember col-md-12">
+<div class="teammember col-lg-12 col-md-12 col-sm-12">
+<article itemscope itemtype ="https://schema.org/Person">
 
         <div class="col-xs-12 col-md-9">
             
@@ -92,8 +92,10 @@ $bio       = get_field('bio');
             
 
         </div>
-    
+
     </article>
+
+</div>
     <style type="text/css">
         #<?php echo $id; ?> {
             background: <?php echo $background_color; ?>;
