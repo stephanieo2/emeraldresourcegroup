@@ -2836,9 +2836,11 @@ figure.alignnone {
 
 
 .body-class-single-post #content h1, .body-class-single-post h2, .body-class-single-post #content h3, .body-class-single-post  #content h4, .body-class-single-post #content h5, .body-class-single-post #content h6 {color:#111 !important; font-weight:700 !important;}
-
-
-
+/*blog page CTA styles 2022 */
+.body-class-single-post .cta-bg {margin-top:0;}
+.cta-container {padding:2em; display:flex;  align-items: center; justify-content: center;}
+.cta-container img {width:100%;}
+ 
 
 
 

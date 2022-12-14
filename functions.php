@@ -1254,4 +1254,24 @@ function my_acf_init_block_types() {
         ));
     }
 
+        // Check function exists.
+    if( function_exists('acf_register_block_type') ) {
+        
+        // register a cta block.
+        acf_register_block_type(array(
+            'name'              => 'cta',
+            'title'             => __('Call to Action'),
+            'description'       => __('A custom CTA block.'),
+            'render_template'   => 'blocks/cta.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'call to action', 'cta' ),
+            'mode'              => 'preview',
+        ));
+    }
+
+
+
 }
+
+
