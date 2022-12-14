@@ -50,10 +50,10 @@
         <div id="content">
           <?php while (have_posts()) : the_post(); ?>
             <?php the_title('<div class="title"><h1>', '</h1></div>'); ?>
-
+<span class="time">
 Published: <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 
-<br>
+</span>
 
             <?php
 function show_last_updated( $content ) {
@@ -62,7 +62,7 @@ function show_last_updated( $content ) {
   if ($u_modified_time >= $u_time + 86400) {
     $updated_date = get_the_modified_time('F jS, Y');
     $updated_time = get_the_modified_time('h:i a');
-    $custom_content .= '<time itemprop="dateModified" datetime="'. $updated_date . '" class="last-updated-date">Updated on '. $updated_date . ' at '. $updated_time .'</time>';
+    $custom_content .= '<time itemprop="dateModified" datetime="'. $updated_date . '" class="last-updated-date">Updated on '. $updated_date . '</time>';
   }
   $custom_content .= $content;
   return $custom_content;
