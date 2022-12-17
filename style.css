@@ -2817,8 +2817,10 @@ figure.alignnone {
 .teammember img { margin-bottom:10px !important;
 }
 
-
 /*blog page styles 2022 */
+
+
+
 
 .body-class-page-id-685 li {padding:1em 0; margin-top:0px !important; list-style-type:none;}
 .tag-archive-list {margin:2em 0; border-bottom:2px solid #eee;}
@@ -2827,12 +2829,12 @@ figure.alignnone {
 
 .taglist a:hover {color:white;}
 
-.time {opacity:0.57; padding:1em 0; font-size:0.8em;}
+.time {opacity:0.57; padding:0 0 1em 0; font-size:0.8em;}
 
-.body-class-single-post {font-size:2.2em;}
+.body-class-single-post #content p {font-size:1.2em; line-height:1.5; margin-bottom:1.75em}
+.excrpt p {margin:0 0 !important; padding: 0 0; font-style: italic; opacity:0.8; font-weight: 700;}
 
-
-.body-class-single-post .wp-block-image {padding-bottom:1.2em;}
+.body-class-single-post .wp-block-image {padding:1.5em 0;}
 
 
 .body-class-single-post #content h1, .body-class-single-post h2, .body-class-single-post #content h3, .body-class-single-post  #content h4, .body-class-single-post #content h5, .body-class-single-post #content h6 {color:#111 !important; font-weight:700 !important;}

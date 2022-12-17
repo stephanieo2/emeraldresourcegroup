@@ -48,15 +48,18 @@
       <?php get_sidebar('blog'); ?>
       <div class="col-xs-12 col-md-8">
         <div id="content">
+
           <?php while (have_posts()) : the_post(); ?>
+<a href="/blog">Blog Home</a>
             <?php the_title('<div class="title"><h1>', '</h1></div>'); ?>
-<div class="time">
+
+ <h3 class="excrpt"> <?php the_excerpt(); ?> </h3>
+  
+  <div class="time">
 
 Updated: <time datetime="<?php echo get_the_modified_time('F jS, Y'); ?>" itemprop="datePublished"><?php echo get_the_modified_time('F jS, Y'); ?></time>
 
 </div>
- 
-         
             <?php the_content(); ?>
  
 <h2>Tags:</h2>
