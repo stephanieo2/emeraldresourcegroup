@@ -50,16 +50,16 @@ $bio       = get_field('bio');
 
              <h3 itemprop="JobTitle"><?php echo $jobtitle; ?></h3>
 
+
+             <h3 style="display: none;" itemprop="worksFor">Emerald Resource Group</h3>
+             <?php echo $bio; ?> 
+
             <?php 
             $image = get_field('specialties');
             if( !empty( $specialties ) ): ?>  
               <h4> Specialties: <?php echo $specialties; ?></h4>
             <?php endif; ?>
 
-             <h3 style="display: none;" itemprop="worksFor">Emerald Resource Group</h3>
-             <?php echo $bio; ?>&nbsp;
-
-             
         </div>
 
                 <div class="col-xs-12 col-md-3 testimonial-image">
